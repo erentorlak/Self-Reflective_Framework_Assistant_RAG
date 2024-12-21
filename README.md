@@ -33,8 +33,7 @@ When combining code and documentation, chunking presents significant challenges:
 - **LLM-Based Summarization**:
   - Process the entire page of content instead of arbitrary splitting.
   - Generate concise summaries (5–7 sentences) and user-query examples.
-  - Store summaries and query examples with metadata in a vector database for efficient retrieval.
-- Metadata-based retrieval ensures contextual integrity while preserving detailed content.
+  - Concatanate summaries and query examples and use it for vector database.
 
 ---
 
