@@ -1,0 +1,22 @@
+WITH POETRY:
+
+poetry shell
+poetry install
+poetry run python -m app.main
+
+****************************************************************
+WITHOUT POETRY:
+
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+python -m app.main
+
+
+
+****************************************************************
+
+create requirements.txt file : 
+
+poetry export -f requirements.txt --without-hashes > requirements.txt
