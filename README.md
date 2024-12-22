@@ -2,17 +2,21 @@
 
 This project integrates a **Self-RAG** system to enhance adaptive framework support by leveraging internal knowledge bases or performing web searches. The system employs self-evaluation techniques to ensure reliable and accurate outputs for newly created or in-house-developed frameworks, such as software library documentation or APIs.
 
+
+![Self-RAG System Workflow](assets/routing.png)
+
+
+
 ---
 
 ## Table of Contents
-- [Project Description](#project-description)
-- [Challenges and Solutions](#challenges-and-solutions)
-  - [Chunking Problem](#chunking-problem)
-  - [Routing Mechanism](#routing-mechanism)
-- [Example Workflows](#example-workflows)
-- [Monitoring and Evaluation](#monitoring-and-evaluation)
-- [Project Timeline](#project-timeline)
-- [References](#references)
+- [Adaptive Framework Support through Self-Reflective Retrieval-Augmented Generation (Self-RAG) System](#adaptive-framework-support-through-self-reflective-retrieval-augmented-generation-self-rag-system)
+  - [Table of Contents](#table-of-contents)
+  - [Project Description](#project-description)
+  - [Challenges and Solutions](#challenges-and-solutions)
+    - [Chunking Problem](#chunking-problem)
+      - [Solution:](#solution)
+    - [Routing Mechanism](#routing-mechanism)
 
 ---
 
