@@ -50,5 +50,6 @@ class Workflow:
             },
         )
     
-    def compile_workflow(self):
+    def compile_workflow(self,memory_saver):
+        #return self.workflow.compile(memory_saver)
         return self.workflow.compile()

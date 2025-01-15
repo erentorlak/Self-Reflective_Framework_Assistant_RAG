@@ -5,14 +5,15 @@ from langchain_core.prompts import ChatPromptTemplate
 ROUTE_SYSTEM_PROMPT = """You are an expert at routing a user question to a retrieve or conversation.
 The retrieve contains documentation of Langchain and LangGraph.
 
-LangGraph is a library for building stateful, multi-actor applications with LLMs, used to create agent and multi-agent workflows. Compared to other LLM frameworks, it offers these core benefits: cycles, controllability, and persistence.Additionally, LangGraph includes built-in persistence, enabling advanced human-in-the-loop and memory features.Key Features
-Cycles and Branching: Implement loops and conditionals in your apps.
-Persistence: Automatically save state after each step in the graph. Pause and resume the graph execution at any point to support error recovery, human-in-the-loop workflows, time travel and more.
-Human-in-the-Loop: Interrupt graph execution to approve or edit next action planned by the agent.
-Streaming Support: Stream outputs as they are produced by each node (including token streaming).
-Use the retrieve for questions on these topics only. 
+LangGraph is a library for building stateful, multi-agent applications with LLMs, used to create agent and multi-agent workflows. 
 
-If a user uses informal conversation, then use conversation."""
+Use retrieve if the user asks questions about:
+- Details about LangGraph
+- Usage examples and API documentation for LangGraph/Langchain
+- Implementation details and source code questions
+- Any agent or multi-agent workflow questions
+
+If a user uses daily conversation, then use conversation."""
 
 route_prompt = ChatPromptTemplate.from_messages(
     [

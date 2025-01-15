@@ -24,7 +24,8 @@ class Chains:
 
         # RAG Chain
         self.rag_prompt = hub.pull("heyheyerent/erent_promptv1")
-        self.rag_llm = ChatOpenAI(model="gpt-4o", temperature=0)
+        #self.rag_llm = ChatOpenAI(model="gpt-4o", temperature=0)
+        self.rag_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
         self.rag_chain = self.rag_prompt | self.rag_llm | StrOutputParser()
 
         # Conversation Chain

@@ -36,6 +36,7 @@ docs[32].page_content
 class CreateSummary(BaseModel):
     """Summary and possible queries for a document."""
     summary: str = Field(description="Summary of the document content in 5-7 sentences.")
+    
     possible_queries: List[str] = Field(
         description="List of possible queries that users might ask about this topic."
     )

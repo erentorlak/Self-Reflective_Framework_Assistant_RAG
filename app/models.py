@@ -1,10 +1,12 @@
 # app/models.py
+from operator import add
 from pydantic import BaseModel, Field
-from typing import List, Literal
+from typing import Annotated, List, Literal
 from typing_extensions import TypedDict
-
+from langgraph.graph.message import add_messages
+from langchain_core.messages import AnyMessage
 class RouteQuery(BaseModel):
-    """Route a user query to the most relevant datasource."""
+    """Route a user query to the most relevant node."""
     datasource: Literal["retrieve", "conversation"] = Field(
         ...,
         description="Given a user question choose to route it to retrieve or conversation.",
@@ -42,3 +44,4 @@ class GraphState(TypedDict):
     generation: str
     documents: List[str]
     query_rewritten_num: int
+    final_output: Annotated[List[str], add]

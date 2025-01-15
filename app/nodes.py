@@ -12,6 +12,10 @@ class Nodes:
     def route_question(self, state: GraphState) -> str:
         print("---ROUTE QUESTION---")
         question = state["question"]
+        history = state.get("history", [])
+
+        if history:
+            question = " \n\n".join(history + [question])
         source = self.chains.question_router.invoke({"question": question})
         if source.datasource == "retrieve":
             print("---ROUTE QUESTION TO RETRIEVER---")
@@ -52,7 +56,7 @@ class Nodes:
         query_rewritten_num = state["query_rewritten_num"]
 
         generation = self.chains.rag_chain.invoke({"context": documents, "question": question})
-        return {"documents": documents, "question": question, "generation": generation, "query_rewritten_num": query_rewritten_num}
+        return {"documents": documents, "question": question, "generation": generation, "query_rewritten_num": query_rewritten_num,"final_output": [generation]}
 
     def grade_documents(self, state: GraphState) -> GraphState:
         print("---CHECK DOCUMENT RELEVANCE TO QUESTION---")
